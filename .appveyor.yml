@@ -11,8 +11,7 @@ install:
   # запускаем SUT (& означает, что в фоновом режиме не блокируем терминал для запуска тестов)
   - java -jar ./artifacts/app-card-delivery.jar &
 
-
-  build_script:
+build_script:
   - chmod +x gradlew
 # запускаем тест, флаг --info позволяет выводить больше информации
 # это для запуска Selenide в скрытом режиме
