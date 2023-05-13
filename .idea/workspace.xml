@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bf88921-5595-4876-bdc0-d067e773fc0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.appveyor.yml" afterDir="false" />
+    <list default="true" id="9bf88921-5595-4876-bdc0-d067e773fc0f" name="Changes" comment="try again">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SelenidDeliveryOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SelenidDeliveryOrderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -61,30 +63,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="SelenidDeliveryOrderTest.shouldTrySendFormWithVoidCity" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;SelenidDeliveryOrderTest.shouldTrySendFormWithVoidCity&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="Date" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Date" />
+      <module name="Autom4.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="SelenidDeliveryOrderTest.shouldTrySendFormWithVoidData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SelenidDeliveryOrderTest.shouldSendFormWithTrueData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -97,7 +83,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;SelenidDeliveryOrderTest.shouldTrySendFormWithVoidData&quot;" />
+            <option value="&quot;SelenidDeliveryOrderTest.shouldSendFormWithTrueData&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -178,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SelenidDeliveryOrderTest.shouldTrySendFormWithWrongDate" />
+        <item itemvalue="Gradle.SelenidDeliveryOrderTest.shouldSendFormWithTrueData" />
+        <item itemvalue="Application.Date" />
         <item itemvalue="Gradle.SelenidDeliveryOrderTest.shouldTrySendFormWithVoidPhone" />
         <item itemvalue="Gradle.SelenidDeliveryOrderTest.shouldTrySendFormWithVoidName" />
-        <item itemvalue="Gradle.SelenidDeliveryOrderTest.shouldTrySendFormWithVoidData" />
-        <item itemvalue="Gradle.SelenidDeliveryOrderTest.shouldTrySendFormWithVoidCity" />
-        <item itemvalue="Gradle.SelenidDeliveryOrderTest.shouldTrySendFormWithWrongDate" />
       </list>
     </recent_temporary>
   </component>
@@ -195,6 +181,18 @@
       <option name="presentableId" value="Default" />
       <updated>1683971437529</updated>
     </task>
+    <task id="LOCAL-00001" summary="try again">
+      <created>1683992349895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683992349895</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="try again" />
+    <option name="LAST_COMMIT_MESSAGE" value="try again" />
   </component>
 </project>

@@ -1,20 +1,30 @@
-import org.junit.jupiter.api.*;
-
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import java.time.Duration;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+
+
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class SelenidDeliveryOrderTest {
+    public String SetDateAfter() {
+
+        return LocalDate.now().plusDays(5).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+    }
+
+
     @BeforeEach
     void setupTest() {
         open("http://localhost:9999");
+
     }
 
     //positive
@@ -22,14 +32,15 @@ public class SelenidDeliveryOrderTest {
     public void shouldSendFormWithTrueData() {
 
         $(By.cssSelector("[data-test-id='city'] input")).setValue("Москва");
-        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys("17.05.2023");
+        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys(Keys.DELETE);
+        $(By.cssSelector("[data-test-id='date'] input")).setValue(SetDateAfter());
         $(By.cssSelector("[data-test-id='name'] input")).setValue("Петров-Иванов Иван");
         $(By.cssSelector("[data-test-id='phone'] input")).setValue("+79123456789");
         $(By.cssSelector("[data-test-id='agreement']")).click();
         $(By.className("button")).click();
         $("[data-test-id = notification]").shouldHave(text("Успешно!"),
                 Duration.ofSeconds(15)).shouldBe(visible);
-        $(".notification__content").shouldHave(text("Встреча успешно забронирована на " + "17.05.2023"),
+        $(".notification__content").shouldHave(text("Встреча успешно забронирована на " + SetDateAfter()),
                 Duration.ofSeconds(15)).shouldBe(visible);
 
     }
@@ -38,7 +49,8 @@ public class SelenidDeliveryOrderTest {
     @Test
     public void shouldTrySendFormWithWrongCity() {
         $(By.cssSelector("[data-test-id='city'] input")).setValue("Ялта");
-        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys("17.05.2023");
+        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys(Keys.DELETE);
+        $(By.cssSelector("[data-test-id='date'] input")).setValue(SetDateAfter());
         $(By.cssSelector("[data-test-id='name'] input")).setValue("Петров-Иванов Иван");
         $(By.cssSelector("[data-test-id='phone'] input")).setValue("+79123456789");
         $(By.cssSelector("[data-test-id='agreement']")).click();
@@ -63,7 +75,8 @@ public class SelenidDeliveryOrderTest {
     @Test
     public void shouldTrySendFormWithWrongName() {
         $(By.cssSelector("[data-test-id='city'] input")).setValue("Москва");
-        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys("17.05.2023");
+        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys(Keys.DELETE);
+        $(By.cssSelector("[data-test-id='date'] input")).setValue(SetDateAfter());
         $(By.cssSelector("[data-test-id='name'] input")).setValue("James Bond");
         $(By.cssSelector("[data-test-id='phone'] input")).setValue("+79123456789");
         $(By.cssSelector("[data-test-id='agreement']")).click();
@@ -78,7 +91,8 @@ public class SelenidDeliveryOrderTest {
     public void shouldTrySendFormWithWrongPhone() {
 
         $(By.cssSelector("[data-test-id='city'] input")).setValue("Москва");
-        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys("17.05.2023");
+        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys(Keys.DELETE);
+        $(By.cssSelector("[data-test-id='date'] input")).setValue(SetDateAfter());
         $(By.cssSelector("[data-test-id='name'] input")).setValue("Петров-Иванов Иван");
         $(By.cssSelector("[data-test-id='phone'] input")).setValue("111111");
         $(By.cssSelector("[data-test-id='agreement']")).click();
@@ -106,7 +120,8 @@ public class SelenidDeliveryOrderTest {
     @Test
     public void shouldTrySendFormWithVoidCity() {
         $(By.cssSelector("[data-test-id='city'] input")).setValue("");
-        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys("17.05.2023");
+        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys(Keys.DELETE);
+        $(By.cssSelector("[data-test-id='date'] input")).setValue(SetDateAfter());
         $(By.cssSelector("[data-test-id='name'] input")).setValue("Петров-Иванов Иван");
         $(By.cssSelector("[data-test-id='phone'] input")).setValue("+79123456789");
         $(By.cssSelector("[data-test-id='agreement']")).click();
@@ -130,7 +145,8 @@ public class SelenidDeliveryOrderTest {
     @Test
     public void shouldTrySendFormWithVoidName() {
         $(By.cssSelector("[data-test-id='city'] input")).setValue("Москва");
-        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys("17.05.2023");
+        $(By.cssSelector("[data-test-id='date'] input")).doubleClick().sendKeys(Keys.DELETE);
+        $(By.cssSelector("[data-test-id='date'] input")).setValue(SetDateAfter());
         $(By.cssSelector("[data-test-id='name'] input")).setValue("");
         $(By.cssSelector("[data-test-id='phone'] input")).setValue("+79123456789");
         $(By.cssSelector("[data-test-id='agreement']")).click();
